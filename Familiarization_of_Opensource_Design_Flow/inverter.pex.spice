@@ -1,0 +1,14 @@
+* PEX produced on Mon Aug  3 11:33:15 AM CEST 2026 using /foss/tools/sak/iic-pex.sh with m=3 and s=1
+* NGSPICE file created from inverter.ext - technology: sky130A
+
+.subckt inverter VP A Y VN
+X0 Y A VP VP sky130_fd_pr__pfet_01v8 ad=0.7 pd=3.4 as=0.7 ps=3.4 w=1 l=0.15
+X1 Y A VN VN sky130_fd_pr__nfet_01v8 ad=0.7 pd=3.4 as=0.7 ps=3.4 w=1 l=0.15
+C0 Y A 0.04359f
+C1 Y VP 0.10057f
+C2 VP A 0.05752f
+C3 Y VN 0.29384f
+C4 A VN 0.44012f
+C5 VP VN 0.74936f
+.ends
+

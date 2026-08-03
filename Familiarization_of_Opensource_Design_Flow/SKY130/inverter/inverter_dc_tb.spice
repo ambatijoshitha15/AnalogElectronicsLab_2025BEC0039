@@ -1,0 +1,26 @@
+** sch_path: /foss/designs/inverter_dc_tb.sch
+**.subckt inverter_dc_tb Vout
+*.opin Vout
+x1 Vdd Vin Vout GND inverter
+Vdd Vdd GND 1.8
+Vin Vin GND 0
+**** begin user architecture code
+
+** opencircuitdesign pdks install
+.lib /foss/pdks/sky130A/libs.tech/combined/sky130.lib.spice tt
+
+
+
+.include /foss/designs/inverter.pex.spice
+.option savecurrents
+.control
+save all
+dc Vin 0 1.8 0.1
+plot v(Vin) v(Vout)
+.endc
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
